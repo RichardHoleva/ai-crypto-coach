@@ -1,0 +1,59 @@
+.market-card-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: -130px;
+}
+
+.market-card {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.06);
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.market-card:hover {
+  transform: scale(1.05);
+  color: white;
+}
+
+.market-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.coin-symbol {
+  color: #0A9883;
+}
+
+.coin-image {
+  width: 160px;
+  height: 42px;
+  margin-left: -10px;
+  vertical-align: middle;
+}
+
+.coin-change.positive {
+  color: #27c786;
+}
+
+.coin-change.negative {
+  color: #ff5959;
+}
+
+.coin-price {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
