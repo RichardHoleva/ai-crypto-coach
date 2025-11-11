@@ -32,7 +32,7 @@ function ChatBot() {
   setInput('');
 
   try {
-    const res = await fetch('http://localhost:3000/api/chat', {   // 👈 fixed URL
+    const res = await fetch('https://ai-crypto-coach.onrender.com/api/chat', {   // 👈 fixed URL
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: trimmed })
