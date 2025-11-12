@@ -6,11 +6,19 @@ import MarketCards from '../components/MarketCards';
 
 function LandingPage() {
   const navigate = useNavigate();
+  const [showNotification, setShowNotification] = useState(false);
 
   const fullText = 'Explains the Origin of Crypto Currencies';
   const [displayed, setDisplayed] = useState('');
   const [showCursor, setShowCursor] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
+
+  const handleExtensionClick = () => {
+    setShowNotification(true);
+    setTimeout(() => {
+      setShowNotification(false);
+    }, 1500);
+  };
 
   useEffect(() => {
     if (displayed.length < fullText.length) {
@@ -34,7 +42,6 @@ function LandingPage() {
       <div className="glow-blur glow2"></div>
       <div className="glow-blur glow3"></div>
 
-
       <Navbar />
 
       <div className="landing-content">
@@ -43,25 +50,32 @@ function LandingPage() {
           <span className="cursor">{showCursor ? '|' : ' '}</span>
         </h1>
         <span className="landing-subtitle">
-          Analyze any contract address and uncover what’s behind the pump
-          </span>
+          Analyze any contract address and uncover what's behind the pump
+        </span>
         <div className='landing-buttons'>
-        <button
-          className="get-started-btn"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onClick={() => navigate('/chat')}
-        >
-          Start Chatting
-        </button>
-                <button
-          className="get-extension-btn"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onClick={() => navigate('/chat')}
-        >
-          Get Extension
-        </button>
+          <button
+            className="get-started-btn"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onClick={() => navigate('/chat')}
+          >
+            Start Chatting
+          </button>
+          <div className="extension-button-container">
+            <button
+              className="get-extension-btn"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              onClick={handleExtensionClick}
+            >
+              Get Extension
+            </button>
+            {showNotification && (
+              <div className="coming-soon-notification">
+                Coming Soon! 🚀
+              </div>
+            )}
+          </div>
         </div>
       </div>
       <MarketCards />

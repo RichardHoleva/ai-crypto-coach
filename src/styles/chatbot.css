@@ -1,9 +1,7 @@
 :root {
-  /* Set this to your navbar's height if it's fixed at the top */
   --nav-h: 80px;
 }
 
-/* Page never scrolls; background never shows a gap */
 html, body, #root {
   height: 100%;
   margin: 0;
@@ -15,12 +13,12 @@ html, body, #root {
 /* Area under the navbar; no negative margins */
 .coach-page {
   width: 100vw;
-  min-height: calc(100dvh - var(--nav-h)); /* dynamic vh for mobile too */
+  min-height: calc(100dvh - var(--nav-h)); 
   display: flex;
   justify-content: center;
-  align-items: center;  /* keep the card centered like your original */
-  padding: 24px 10px;   /* breathing room around the card */
-  overflow: hidden;     /* ensure only inner areas can scroll */
+  align-items: center;  
+  padding: 24px 10px;   
+  overflow: hidden;     
   background-color: #01141E;
 }
 
@@ -28,9 +26,9 @@ html, body, #root {
 .coach-container {
   position: relative;
   width: min(1350px, 96%);
-  height: 80vh;                 /* <<< fixed like your original visual size */
+  height: 80vh;                 
   box-sizing: border-box;
-  display: flex;                /* column layout */
+  display: flex;                
   flex-direction: column;
   background: #d9d9d909;
   border: 1px solid rgba(255,255,255,0.05);
@@ -38,29 +36,11 @@ html, body, #root {
   box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.02);
   padding: 36px 28px 24px;
   color: #e7eef7;
-  overflow: hidden;             /* the card itself does not scroll */
+  overflow: hidden;             
   isolation: isolate;
 }
 
-.glow-blur {
-  position: absolute;
-  background: rgba(10, 152, 131, 0.3);
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;         /* never block clicks */
-}
-.glow1 {
-  top: -70px; right: -20px; width: 300px; height: 300px; filter: blur(70px);
-}
-.glow2 {
-  top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 200px; height: 200px; filter: blur(120px);
-  background: rgba(10, 152, 131, 0.8);
-}
-.glow3 {
-  bottom: -100px; left: -80px; width: 300px; height: 400px; filter: blur(100px);
-  background: rgba(10, 152, 131, 0.25);
-}
+
 
 /* ---------------- Empty state (title + prompts) ------------------ */
 .hero {
@@ -155,7 +135,7 @@ html, body, #root {
 
 /* ---------------- Composer ------------------ */
 
-/* Not sticky: flex keeps it at the bottom of the fixed-height card */
+
 .composer {
   position: static;
   bottom: auto;
@@ -163,7 +143,7 @@ html, body, #root {
   grid-template-columns: auto 1fr auto;
   gap: 10px;
   align-items: end;
-  padding-top: 12px;  /* small spacing above composer */
+  padding-top: 12px; 
 }
 .coach-avatar {
   width: 70px; height: 70px; object-fit: contain; transform: translateY(-2px);

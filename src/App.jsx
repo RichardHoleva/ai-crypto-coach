@@ -3,9 +3,9 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="h-screen w-full text-white flex flex-col app-chat">
+    <div>
       <Navbar />
-      <div className="flex-1 flex items-center justify-center">
+      <div>
         <ChatBox />
       </div>
     </div>
