@@ -19,7 +19,7 @@ function Navbar() {
       </div>
 
       <div className="navbar-links">
-        <a href="/">Home</a>
+        <a href="/ai-crypto-coach/">Home</a>
         <Link to="/chat">ChatBot</Link>
         <a href="https://dexscreener.com" target="_blank" rel="noopener noreferrer">DexScreener</a>
         <a href="https://coinmarketcap.com" target="_blank" rel="noopener noreferrer">Market</a>
