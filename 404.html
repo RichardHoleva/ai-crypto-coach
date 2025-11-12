@@ -2,17 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/AI_coach/vite.svg" />
+    <link rel="icon" type="image/x-icon" href="/ai-crypto-coach/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crypto Coach AI</title>
     <script>
+      const currentPath = window.location.pathname;
+      const basePath = '/ai-crypto-coach/';
       
-      sessionStorage.setItem('redirectPath', window.location.pathname);
-      window.location.replace('/AI_coach/');
+      if (currentPath !== basePath) {
+        window.location.replace(basePath + '?redirect=' + encodeURIComponent(currentPath.replace(basePath, '')));
+      } else {
+        window.location.replace(basePath);
+      }
     </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/AI_coach/src/main.jsx"></script>
+    <script type="module" src="/ai-crypto-coach/src/main.jsx"></script>
   </body>
 </html>
